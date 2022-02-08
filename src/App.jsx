@@ -31,6 +31,10 @@ function App() {
   };
 
   const deleteContact = (id) => {
+/*     const filteredContacts = contacts.filter(cont=>{
+      return cont.id !== id;
+    })
+    setContact(filteredContacts); */
     setContact(contacts.filter((cont) => cont.id !== id));
   };
 
@@ -59,7 +63,7 @@ function App() {
                 </td>
                 <td>{cont.picture}</td>
                 <td>{cont.name}</td>
-                <td>{cont.popularity}</td>
+                <td>{cont.popularity.toFixed(2)}</td>
                 <td>{cont.wonOscar === true ? "🏆" : ""}</td>
                 <td>{cont.wonEmmy === true ? "🏆" : ""}</td>
                 <td>
