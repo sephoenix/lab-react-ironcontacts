@@ -7,10 +7,10 @@ function App() {
 
   const randomContact = () => {
     const newContact =
-      contactsData[Math.floor(Math.random() * contactsData.length)];
-    const isIncluded = contacts.find(
-      (contact) => contact.name === newContact.name
-    );
+      contactsData[Math.floor(Math.random() * contactsData.length-1)];
+    
+    const isIncluded = contacts.includes(newContact)
+
     if (!isIncluded) {
       setContact([newContact, ...contacts]);
     } else {
@@ -22,7 +22,6 @@ function App() {
     setContact((contacts) => [
       ...contacts.sort((a, b) => a.name.localeCompare(b.name)),
     ]);
-    console.log(contacts);
   };
 
   const sortByPopularity = () => {
